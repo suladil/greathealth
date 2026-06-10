@@ -1,0 +1,105 @@
+/* cards-benefit -- OmegaXL "Packed With Benefits" grid
+ * Source: https://www.omegaxl.com/ (.omegaxl-benefits-list-grid-wrapper)
+ * Blue gradient band, white icon + white text, icon-left / copy-right rows.
+ * Values extracted from source computed styles (see migration-work/cards-benefit-extracted.css).
+ */
+
+/* Full-bleed blue gradient band behind the benefits grid.
+   The block paints its own background since the EDS section is neutral. */
+.cards-benefit {
+  background-image: linear-gradient(90deg, rgb(0 92 185) 39.26%, rgb(0 167 225) 115.75%);
+  color: #fff;
+  padding: 40px 0;
+  margin: 0;
+}
+
+/* break out of the .section > div max-width:1200px / side padding so the
+   gradient spans the viewport width like the source */
+.cards-benefit-wrapper {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+/* benefit grid -- mobile first: single column */
+.cards-benefit ul {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0 24px;
+  max-width: 1100px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+/* one benefit = icon (left) + copy (right), no border/shadow, transparent */
+.cards-benefit ul > li {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
+  border: 0;
+  box-shadow: none;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+/* icon cell -- fixed 48x48, never shrinks */
+.cards-benefit .cards-benefit-card-image {
+  flex: 0 0 48px;
+  width: 48px;
+  line-height: 0;
+}
+
+.cards-benefit .cards-benefit-card-image img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  margin: 0;
+}
+
+/* copy cell */
+.cards-benefit .cards-benefit-card-body {
+  margin: 0;
+  text-align: left;
+}
+
+.cards-benefit .cards-benefit-card-body h3 {
+  margin: 0 0 4px;
+  font-family: var(--heading-font-family);
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.15;
+  text-transform: capitalize;
+  color: #fff;
+}
+
+.cards-benefit .cards-benefit-card-body p {
+  margin: 0;
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #fff;
+}
+
+/* tablet: 2-up */
+@media (width >= 600px) {
+  .cards-benefit ul {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 46px;
+  }
+}
+
+/* desktop: 3-up */
+@media (width >= 900px) {
+  .cards-benefit {
+    padding: 48px 0;
+  }
+
+  .cards-benefit ul {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 46px;
+    padding: 0 32px;
+  }
+}

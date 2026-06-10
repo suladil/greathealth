@@ -1,0 +1,89 @@
+/*
+ * Embed Block (video variant)
+ * Centered, responsive 16:9 video embed.
+ * Source: https://www.omegaxl.com/ (.omegaxl-main-video-content-wrapper)
+ * Source values: iframe max-width 1100px, 1100x625 (16:9), no border/radius/shadow.
+ */
+
+.embed-video {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  background-color: transparent;
+}
+
+/*
+ * After decorate(): block JS replaces innerHTML with
+ *   <div style="padding-bottom:56.25%; position:relative; width:100%">
+ *     <iframe style="position:absolute; inset:0; width:100%; height:100%; border:0">
+ * The inline padding-bottom drives the 16:9 aspect ratio, so this wrapper
+ * must remain a block (NOT flex) for the ratio box to work.
+ */
+.embed-video > div {
+  position: relative;
+  width: 100%;
+  margin: 0;
+}
+
+.embed-video iframe {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Twitter variant centering (unchanged from default behaviour) */
+.embed-video.embed-video-twitter .twitter-tweet-rendered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Placeholder (thumbnail + play) -- used only when an image precedes the link */
+.embed-video .embed-video-placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  position: relative;
+}
+
+.embed-video .embed-video-placeholder > * {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  inset: 0;
+}
+
+.embed-video .embed-video-placeholder picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.embed-video .embed-video-placeholder-play button {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  transform: scale(3);
+  width: 22px;
+  height: 22px;
+  border: 2px solid;
+  border-radius: 20px;
+  padding: 0;
+  background: transparent;
+  color: #fff;
+}
+
+.embed-video .embed-video-placeholder-play button::before {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  width: 0;
+  height: 10px;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 6px solid;
+  top: 4px;
+  left: 7px;
+}

@@ -1,0 +1,85 @@
+/* hero-banner -- full-width clickable promotional banner image.
+   Marketing copy is baked into the image; the offer link is an invisible
+   overlay covering the entire banner. Values extracted from source:
+   https://www.omegaxl.com/ (.omegaxl-home-hero-section-wrapper) */
+
+/* Full-bleed: source banner has max-width:none, padding:0, margin:0.
+   Override the EDS section wrapper which otherwise caps width at 1200px. */
+.section.hero-banner-container,
+.hero-banner-container .hero-banner-wrapper {
+  max-width: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Block container -- relative so the offer link can overlay the image */
+.hero-banner {
+  position: relative;
+  width: 100%;
+  margin: 0;
+}
+
+/* Row + cell reset (EDS wraps image/link rows and cells in divs/<p>) */
+.hero-banner > div,
+.hero-banner > div > div,
+.hero-banner p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Banner image: full width, natural aspect ratio (source display:block,
+   width:100%, max-width:100%, height:auto) */
+.hero-banner picture,
+.hero-banner img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Second row holds the offer link -- overlay it across the whole banner.
+   :not(:only-child) guards against the banner-image-only variant. */
+.hero-banner > div:last-child:not(:only-child) {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+}
+
+.hero-banner > div:last-child:not(:only-child) > div {
+  width: 100%;
+  height: 100%;
+}
+
+/* Invisible overlay link. Reset the global a.button pill styling
+   (EDS decorates standalone <p><a> into a.button / .button-container). */
+.hero-banner a,
+main .hero-banner a.button:any-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
+  text-align: left;
+  white-space: normal;
+  overflow: hidden;
+}
+
+.hero-banner a:hover,
+main .hero-banner a.button:any-link:hover {
+  background: transparent;
+  text-decoration: none;
+}
+
+/* If EDS wraps the link in a .button-container, neutralize its spacing */
+.hero-banner .button-container {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  text-align: left;
+}

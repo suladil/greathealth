@@ -1,0 +1,38 @@
+{
+  "variantName": "cards-policy",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-06-09T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.omegaxl.com/",
+    "originPage": "OmegaXL homepage",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "accent",
+    "density": "compact",
+    "purpose": "policy",
+    "imagePattern": "icon"
+  },
+  "contentPattern": {
+    "structure": "image + heading per item (guarantees / policies)",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "guarantee/policy item rows",
+      "trust badge + heading grids on accent backgrounds",
+      "icon + short heading items"
+    ],
+    "notSuitableFor": [
+      "product cards with prices",
+      "long descriptive feature cards"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-09T00:00:00.000Z"
+  }
+}

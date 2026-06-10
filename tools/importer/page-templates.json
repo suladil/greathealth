@@ -1,0 +1,132 @@
+{
+  "metadata": {
+    "projectType": "xwalk"
+  },
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": ["https://www.omegaxl.com/"],
+      "description": "Homepage template for OmegaXL website",
+      "blocks": [
+        {
+          "name": "hero-banner",
+          "instances": [".omegaxl-home-hero-section-wrapper", "#main-static-banner"]
+        },
+        {
+          "name": "carousel-product",
+          "instances": ["#oxl-product-slider-1", "#oxl-product-slider-2"]
+        },
+        {
+          "name": "cards-benefit",
+          "instances": [".omegaxl-benefits-list-grid-wrapper"]
+        },
+        {
+          "name": "table-compare",
+          "instances": [".omegaxl-difference-content-table-wrapper"]
+        },
+        {
+          "name": "cards-testimonial",
+          "instances": [".omegaxl-testimonials-grid-wrapper"]
+        },
+        {
+          "name": "embed-video",
+          "instances": [".omegaxl-main-video-content-wrapper"]
+        },
+        {
+          "name": "quote-founder",
+          "instances": [".omegaxl-quote-block-home-content-wrapper"]
+        },
+        {
+          "name": "columns-rating",
+          "instances": [".omegaxl-our-mission-ratings-wrapper"]
+        },
+        {
+          "name": "cards-policy",
+          "instances": [".omegaxl-our-mission-policies-wrapper"]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-hero",
+          "name": "Hero slider banner",
+          "selector": ".omegaxl-home-hero-section-wrapper",
+          "style": null,
+          "blocks": ["hero-banner"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-bundles",
+          "name": "Bundles Savings",
+          "selector": "#oxl-product-slider-1",
+          "style": "light",
+          "blocks": ["carousel-product"],
+          "defaultContent": [".omegaxl-shop-all-products-heading-wrapper"]
+        },
+        {
+          "id": "section-antinol",
+          "name": "Antinol partner promo banner",
+          "selector": "#main-static-banner",
+          "style": null,
+          "blocks": ["hero-banner"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-shop-all",
+          "name": "Shop All products",
+          "selector": "#oxl-product-slider-2",
+          "style": "light",
+          "blocks": ["carousel-product"],
+          "defaultContent": [".omegaxl-shop-all-products-heading-wrapper"]
+        },
+        {
+          "id": "section-benefits",
+          "name": "OmegaXL Packed With Benefits",
+          "selector": ".omegaxl-benefits-section-wrapper",
+          "style": "light",
+          "blocks": ["cards-benefit"],
+          "defaultContent": [".omegaxl-benefits-heading", ".omegaxl-benefits-button-wrapper"]
+        },
+        {
+          "id": "section-difference",
+          "name": "The OmegaXL Difference",
+          "selector": ".omegaxl-difference-section-wrapper",
+          "style": "light",
+          "blocks": ["table-compare"],
+          "defaultContent": [".omegaxl-difference-heading", ".omegaxl-difference-button-wrapper"]
+        },
+        {
+          "id": "section-reviews",
+          "name": "OmegaXL Over 20,000+ Five Star Reviews",
+          "selector": ".omegaxl-testimonials-section-wrapper",
+          "style": "light",
+          "blocks": ["cards-testimonial"],
+          "defaultContent": [".omegaxl-testimonials-heading-wrapper"]
+        },
+        {
+          "id": "section-video",
+          "name": "Main brand video",
+          "selector": ".omegaxl-main-video-section-wrapper",
+          "style": null,
+          "blocks": ["embed-video"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-quote",
+          "name": "Founder quote",
+          "selector": ".omegaxl-quote-home-section-wrapper",
+          "style": null,
+          "blocks": ["quote-founder"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-mission",
+          "name": "Our Mission - ratings and policies",
+          "selector": ".omegaxl-our-mission-section-wrapper",
+          "style": "accent",
+          "blocks": ["columns-rating", "cards-policy"],
+          "defaultContent": [".omegaxl-our-mission-logo-heading-wrapper"]
+        }
+      ]
+    }
+  ]
+}

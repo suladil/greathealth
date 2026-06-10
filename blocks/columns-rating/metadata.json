@@ -1,0 +1,38 @@
+{
+  "variantName": "columns-rating",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-06-09T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.omegaxl.com/",
+    "originPage": "OmegaXL homepage",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "accent",
+    "density": "compact",
+    "purpose": "ratings",
+    "imagePattern": "icon"
+  },
+  "contentPattern": {
+    "structure": "two side-by-side rating panels (logo + score + stars), each linked",
+    "buttonCount": 0,
+    "imageCount": 2
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "side-by-side rating/trust panels",
+      "BBB / Google review summaries",
+      "general two-up informational layouts"
+    ],
+    "notSuitableFor": [
+      "distinct repeatable product/feature cards (use cards)",
+      "single-column content"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-09T00:00:00.000Z"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "variantName": "quote-founder",
+  "baseBlock": "quote",
+  "version": "1.0.0",
+  "created": "2026-06-09T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.omegaxl.com/",
+    "originPage": "OmegaXL homepage",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "accent",
+    "density": "spacious",
+    "purpose": "founder-quote",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "pull-quote + attribution (founder) over full-width background image with portrait and CTA",
+    "buttonCount": 1,
+    "imageCount": 2
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "founder / executive pull-quotes",
+      "brand mission statements with attribution",
+      "highlighted testimonial banners"
+    ],
+    "notSuitableFor": [
+      "multiple repeating customer testimonials (use cards-testimonial)",
+      "plain inline quotes within body copy"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-09T00:00:00.000Z"
+  }
+}

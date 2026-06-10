@@ -1,0 +1,88 @@
+/* cards-policy -- OmegaXL "Our Mission" guarantee/policy cards.
+   Each card: blue gradient panel, seal image on top, centered white
+   heading + copy with an "Additional terms apply" link. */
+
+.cards-policy > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.cards-policy > ul > li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 270px;
+  max-width: 100%;
+  padding: 20px;
+  margin: 0;
+  background-image: linear-gradient(124deg, #005cb9 0%, #00a7e1 100%);
+  border-radius: 8px;
+  box-shadow: 0 4px 15px 0 rgb(0 0 0 / 15%);
+}
+
+/* seal / badge image */
+.cards-policy .cards-policy-card-image {
+  line-height: 0;
+  margin-bottom: 12px;
+}
+
+.cards-policy .cards-policy-card-image img {
+  width: 106px;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* card text body */
+.cards-policy .cards-policy-card-body {
+  margin: 0;
+}
+
+.cards-policy .cards-policy-card-body h3 {
+  margin: 0 0 8px;
+  font-family: var(--body-font-family);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 26px;
+  color: #fff;
+  text-align: center;
+}
+
+.cards-policy .cards-policy-card-body p {
+  margin: 0;
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #fff;
+  text-align: center;
+}
+
+/* "Additional terms apply" inline link */
+.cards-policy .cards-policy-card-body a:any-link {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: underline;
+}
+
+.cards-policy .cards-policy-card-body a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Desktop: cards sit side by side in a row */
+@media (width >= 900px) {
+  .cards-policy > ul {
+    flex-direction: row;
+    align-items: stretch;
+  }
+}
