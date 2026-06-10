@@ -36,7 +36,7 @@
       "id": "cards-policy-item",
       "fields": [
         {
-          "component": "reference",
+          "component": "richtext",
           "valueType": "string",
           "name": "image",
           "label": "Image",
@@ -55,7 +55,9 @@
   "filters": [
     {
       "id": "cards-policy",
-      "components": ["cards-policy-item"]
+      "components": [
+        "cards-policy-item"
+      ]
     }
   ]
 }

@@ -36,7 +36,7 @@
       "id": "cards-benefit-item",
       "fields": [
         {
-          "component": "reference",
+          "component": "richtext",
           "valueType": "string",
           "name": "image",
           "label": "Image",
@@ -55,7 +55,9 @@
   "filters": [
     {
       "id": "cards-benefit",
-      "components": ["cards-benefit-item"]
+      "components": [
+        "cards-benefit-item"
+      ]
     }
   ]
 }

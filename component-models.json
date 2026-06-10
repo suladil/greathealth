@@ -164,7 +164,7 @@
     "id": "cards-benefit-item",
     "fields": [
       {
-        "component": "reference",
+        "component": "richtext",
         "valueType": "string",
         "name": "image",
         "label": "Image",
@@ -183,7 +183,7 @@
     "id": "cards-policy-item",
     "fields": [
       {
-        "component": "reference",
+        "component": "richtext",
         "valueType": "string",
         "name": "image",
         "label": "Image",
@@ -202,7 +202,7 @@
     "id": "cards-testimonial-item",
     "fields": [
       {
-        "component": "reference",
+        "component": "richtext",
         "valueType": "string",
         "name": "image",
         "label": "Image",
@@ -240,7 +240,7 @@
     "id": "carousel-product-item",
     "fields": [
       {
-        "component": "reference",
+        "component": "richtext",
         "valueType": "string",
         "name": "media_image",
         "label": "Background Image",
@@ -406,7 +406,7 @@
     "id": "hero-banner",
     "fields": [
       {
-        "component": "reference",
+        "component": "richtext",
         "valueType": "string",
         "name": "image",
         "label": "Image",
