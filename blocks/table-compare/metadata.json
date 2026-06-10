@@ -1,0 +1,38 @@
+{
+  "variantName": "table-compare",
+  "baseBlock": "table",
+  "version": "1.0.0",
+  "created": "2026-06-09T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.omegaxl.com/",
+    "originPage": "OmegaXL homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "comparison",
+    "imagePattern": "icon"
+  },
+  "contentPattern": {
+    "structure": "3-column comparison: feature label + check/cancel icon per product column; header row",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "product comparison tables",
+      "feature vs competitor checklists",
+      "row-and-column data with check/cancel marks"
+    ],
+    "notSuitableFor": [
+      "free-form narrative content",
+      "image galleries"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-09T00:00:00.000Z"
+  }
+}

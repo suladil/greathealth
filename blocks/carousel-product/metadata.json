@@ -1,0 +1,38 @@
+{
+  "variantName": "carousel-product",
+  "baseBlock": "carousel",
+  "version": "1.0.0",
+  "created": "2026-06-09T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.omegaxl.com/",
+    "originPage": "OmegaXL homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "wide",
+    "purpose": "product-carousel",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "repeating product slides: image + title + Shop Now CTA",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "horizontal product sliders",
+      "shop bundles / shop all rows",
+      "swipable image+title+CTA item rows"
+    ],
+    "notSuitableFor": [
+      "single full-screen hero banner slides",
+      "static non-scrolling grids"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 2,
+    "lastUsed": "2026-06-09T00:00:00.000Z"
+  }
+}

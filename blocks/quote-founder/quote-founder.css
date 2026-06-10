@@ -1,0 +1,135 @@
+/* Founder pull-quote over full-width scenery background.
+   Source: omegaxl.com home -- "Your Health is Your Greatest Wealth."
+   Values extracted from getComputedStyle (see migration-work/quote-founder-extracted.css). */
+
+/* ---------------------------------------------------------------------------
+   Section overlay: the scenery image is authored as default content
+   (<p><picture>) immediately BEFORE the .quote-founder block in the same
+   section. Turn that section into a relative box, absolutely position the
+   picture to fill it, and overlay the quote on top.
+   --------------------------------------------------------------------------- */
+.section.quote-founder-container,
+.section:has(.quote-founder) {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* full-bleed section div (override the 1200px max-width / side padding) */
+.section.quote-founder-container > div,
+.section:has(.quote-founder) > div {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* the authored background picture -> absolute, covers the section */
+.section:has(.quote-founder) > div > p:first-child {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  z-index: 0;
+}
+
+.section:has(.quote-founder) > div > p:first-child picture,
+.section:has(.quote-founder) > div > p:first-child img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 0%;
+}
+
+/* ---------------------------------------------------------------------------
+   Quote block: centered overlay on top of the scenery
+   --------------------------------------------------------------------------- */
+.quote-founder.block {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 280px;
+  padding: 32px 24px;
+  text-align: center;
+}
+
+.quote-founder.block blockquote {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 900px;
+}
+
+/* Quotation heading -- 64px on source desktop, scaled for mobile-first */
+.quote-founder.block blockquote .quote-founder-quotation {
+  margin: 0;
+}
+
+.quote-founder.block blockquote .quote-founder-quotation h2,
+.quote-founder.block blockquote .quote-founder-quotation p {
+  margin: 0;
+  font-family: var(--body-font-family);
+  font-weight: 400;
+  font-size: 34px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+}
+
+/* reset the boilerplate decorative quote pseudo-elements: the authored
+   content already contains the quotation marks, so don't double them */
+.quote-founder.block blockquote .quote-founder-quotation > :first-child {
+  text-indent: 0;
+}
+
+.quote-founder.block blockquote .quote-founder-quotation p:first-child::before,
+.quote-founder.block blockquote .quote-founder-quotation p:last-child::after {
+  content: none;
+}
+
+/* Attribution -- 20px / weight 300, white, centered */
+.quote-founder.block blockquote .quote-founder-attribution {
+  margin: 12px 0 0;
+  text-align: center;
+}
+
+.quote-founder.block blockquote .quote-founder-attribution p {
+  margin: 0;
+  font-family: var(--body-font-family);
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #fff;
+}
+
+/* the dash is part of the authored text ("- Ken Meares..."), so suppress the
+   boilerplate em-dash pseudo-element */
+.quote-founder.block blockquote .quote-founder-attribution p:first-child::before {
+  content: none;
+}
+
+/* ---------------------------------------------------------------------------
+   Desktop
+   --------------------------------------------------------------------------- */
+@media (width >= 900px) {
+  .quote-founder.block {
+    min-height: 400px;
+    padding: 48px 32px;
+  }
+
+  .quote-founder.block blockquote .quote-founder-quotation h2,
+  .quote-founder.block blockquote .quote-founder-quotation p {
+    font-size: 64px;
+    line-height: 1.2;
+  }
+
+  .quote-founder.block blockquote .quote-founder-attribution {
+    margin-top: 16px;
+  }
+
+  .quote-founder.block blockquote .quote-founder-attribution p {
+    font-size: 20px;
+  }
+}

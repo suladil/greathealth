@@ -185,11 +185,15 @@ export default async function decorate(block) {
   nav.id = 'nav';
   while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
 
-  const classes = ['brand', 'sections', 'tools'];
+  const classes = ['brand', 'sections', 'tools', 'utility'];
   classes.forEach((c, i) => {
     const section = nav.children[i];
     if (section) section.classList.add(`nav-${c}`);
   });
+
+  // Move the utility bar (promo + phone + account) out of the nav grid into
+  // its own top bar rendered above the main nav row.
+  const navUtility = nav.querySelector('.nav-utility');
 
   const navBrand = nav.querySelector('.nav-brand');
   const brandLink = navBrand.querySelector('.button');
@@ -239,6 +243,10 @@ export default async function decorate(block) {
 
   const navWrapper = document.createElement('div');
   navWrapper.className = 'nav-wrapper';
+  if (navUtility) {
+    navUtility.remove();
+    navWrapper.append(navUtility);
+  }
   navWrapper.append(nav);
   block.append(navWrapper);
 

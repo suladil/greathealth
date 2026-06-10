@@ -1,0 +1,251 @@
+/* ============================================================
+   carousel-product — OmegaXL product card carousel
+   Source: https://www.omegaxl.com/  #oxl-product-slider-1
+   Horizontal, multi-card, scrollable row of blue product cards.
+   Values extracted from source computed styles.
+   ============================================================ */
+
+.carousel-product {
+  position: relative;
+  margin: 0 auto;
+}
+
+.carousel-product .carousel-product-slides-container {
+  position: relative;
+}
+
+.carousel-product .carousel-product-slides,
+.carousel-product .carousel-product-slide-indicators {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Horizontally scrollable flex row of cards */
+.carousel-product .carousel-product-slides {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+  padding: 8px 13px;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  overflow: auto visible;
+}
+
+.carousel-product .carousel-product-slides::-webkit-scrollbar {
+  display: none;
+}
+
+/* ---- Product card (slide) ---- */
+.carousel-product .carousel-product-slide {
+  flex: 0 0 78%;                 /* mobile: ~1.2 cards visible */
+  max-width: 350px;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  box-sizing: border-box;
+  background-color: rgb(0 93 185);
+  border-radius: 12px;
+  box-shadow: rgb(0 0 0 / 10%) 0 1px 3px 0, rgb(0 0 0 / 10%) 0 1px 2px -1px;
+  padding: 20px 16px;
+  text-align: center;
+}
+
+/* Hide the authored "Carousel" config/label slide (no product image) */
+.carousel-product .carousel-product-slide:not(:has(.carousel-product-slide-image picture)) {
+  display: none;
+}
+
+/* Card layout: image on top, then product name, then Shop Now button.
+   (EDS authors name + button together in the content cell, so the button
+   naturally sits at the bottom of the card under the name.) */
+.carousel-product .carousel-product-slide-image {
+  order: 1;
+  width: 100%;
+}
+
+.carousel-product .carousel-product-slide-content {
+  order: 2;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1 1 auto;
+  justify-content: space-between;
+}
+
+/* Product image */
+.carousel-product .carousel-product-slide-image picture {
+  display: block;
+  width: 100%;
+}
+
+.carousel-product .carousel-product-slide-image img {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+}
+
+/* Product name heading (authored as h2, source uses h3 styling) */
+.carousel-product .carousel-product-slide-content h2 {
+  font-size: 22px;
+  font-weight: 700;
+  font-family: var(--body-font-family);
+  line-height: 1.3;
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  margin: 8px 0 4px;
+}
+
+/* Hide the "price depends" helper paragraph if present, keep button paragraph */
+.carousel-product .carousel-product-slide-content p {
+  margin: 0;
+}
+
+/* Shop Now button — brand blue pill.
+   EDS wraps the standalone link in p.button-container and adds a.button.
+   The card sits on a blue bg, so the bright brand blue button stays vibrant. */
+.carousel-product .carousel-product-slide-content .button-container {
+  margin: 12px 0 0;
+  width: 100%;
+  text-align: center;
+}
+
+.carousel-product .carousel-product-slide-content a.button:any-link {
+  display: inline-block;
+  margin: 0;
+  background-color: var(--brand-blue);
+  color: #fff;
+  border: 3px solid transparent;
+  border-radius: 16px;
+  padding: 6px 32px;
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: none;
+}
+
+.carousel-product .carousel-product-slide-content a.button:hover,
+.carousel-product .carousel-product-slide-content a.button:focus {
+  background-color: var(--link-hover-color);
+}
+
+/* ---- Slide indicator dots ---- */
+.carousel-product nav {
+  margin: 0;
+}
+
+.carousel-product .carousel-product-slide-indicators {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 12px 0;
+  line-height: 0;
+}
+
+.carousel-product .carousel-product-slide-indicator button {
+  width: 12px;
+  height: 12px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background-color: #cfcfcf;
+  transition: background-color 0.2s;
+}
+
+.carousel-product .carousel-product-slide-indicator button:disabled,
+.carousel-product .carousel-product-slide-indicator button:hover,
+.carousel-product .carousel-product-slide-indicator button:focus-visible {
+  background-color: var(--brand-blue);
+}
+
+/* ---- Prev / next navigation chevrons ---- */
+.carousel-product .carousel-product-navigation-buttons {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.carousel-product .carousel-product-navigation-buttons button {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  margin: 0 4px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background-color: rgb(255 255 255 / 85%);
+  box-shadow: rgb(0 0 0 / 15%) 0 1px 4px 0;
+  pointer-events: auto;
+  transition: background-color 0.2s;
+}
+
+.carousel-product .carousel-product-navigation-buttons button:hover,
+.carousel-product .carousel-product-navigation-buttons button:focus-visible {
+  background-color: #fff;
+}
+
+.carousel-product .carousel-product-navigation-buttons button::after {
+  display: block;
+  content: '';
+  border: 2px solid var(--brand-blue);
+  border-bottom: 0;
+  border-left: 0;
+  height: 10px;
+  width: 10px;
+  position: absolute;
+  top: 50%;
+  left: calc(50% + 2px);
+  transform: translate(-50%, -50%) rotate(-135deg);
+}
+
+.carousel-product .carousel-product-navigation-buttons button.slide-next::after {
+  transform: translate(-50%, -50%) rotate(45deg);
+  left: calc(50% - 2px);
+}
+
+/* ---- Responsive: multiple cards per row on larger screens ---- */
+@media (width >= 600px) {
+  .carousel-product .carousel-product-slide {
+    flex-basis: 320px;
+  }
+}
+
+@media (width >= 900px) {
+  .carousel-product .carousel-product-slides {
+    gap: 8px;
+    padding: 8px 13px;
+  }
+
+  /* ~3.5 cards visible like the source desktop layout */
+  .carousel-product .carousel-product-slide {
+    flex-basis: 320px;
+    max-width: 350px;
+  }
+
+  .carousel-product .carousel-product-slide-image img {
+    height: 233px;
+  }
+
+  .carousel-product .carousel-product-slide-content h2 {
+    font-size: 26px;
+  }
+
+  .carousel-product .carousel-product-slide-content a.button:any-link {
+    font-size: 24px;
+  }
+}

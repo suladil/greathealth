@@ -34,15 +34,54 @@
     ]
   },
   {
+    "id": "cards-benefit",
+    "components": [
+      "cards-benefit-item"
+    ]
+  },
+  {
+    "id": "cards-policy",
+    "components": [
+      "cards-policy-item"
+    ]
+  },
+  {
+    "id": "cards-testimonial",
+    "components": [
+      "cards-testimonial-item"
+    ]
+  },
+  {
     "id": "cards",
     "components": [
       "card"
     ]
   },
   {
+    "id": "carousel-product",
+    "components": [
+      "carousel-product-item"
+    ]
+  },
+  {
     "id": "carousel",
     "components": [
       "carousel-item"
+    ]
+  },
+  {
+    "id": "columns-rating",
+    "components": [
+      "column-rating"
+    ]
+  },
+  {
+    "id": "column-rating",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title"
     ]
   },
   {
@@ -58,6 +97,30 @@
       "image",
       "button",
       "title"
+    ]
+  },
+  {
+    "id": "table-compare",
+    "components": [
+      "table-compare-row"
+    ]
+  },
+  {
+    "id": "table-compare-2-columns",
+    "components": [
+      "table-compare-col-2"
+    ]
+  },
+  {
+    "id": "table-compare-3-columns",
+    "components": [
+      "table-compare-col-3"
+    ]
+  },
+  {
+    "id": "table-compare-4-columns",
+    "components": [
+      "table-compare-col-4"
     ]
   },
   {

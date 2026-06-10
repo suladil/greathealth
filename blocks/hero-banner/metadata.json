@@ -1,0 +1,38 @@
+{
+  "variantName": "hero-banner",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-06-09T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.omegaxl.com/",
+    "originPage": "OmegaXL homepage",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "accent",
+    "density": "wide",
+    "purpose": "promo-banner",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "full-width banner image + link",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "full-width promotional banners",
+      "linked offer/campaign banners",
+      "partner promo banners"
+    ],
+    "notSuitableFor": [
+      "text-heavy hero with separate headline and body copy",
+      "multi-element layouts below the banner"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 2,
+    "lastUsed": "2026-06-09T00:00:00.000Z"
+  }
+}

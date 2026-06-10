@@ -1,0 +1,22 @@
+{
+  "status": "success",
+  "url": "https://www.omegaxl.com/",
+  "path": "index",
+  "timestamp": "2026-06-09T16:36:57.174Z",
+  "title": "OmegaXL® is a powerful omega 3 joint health supplement | Omega XL",
+  "template": "homepage",
+  "blocks": [
+    "hero-banner",
+    "hero-banner",
+    "carousel-product",
+    "carousel-product",
+    "cards-benefit",
+    "table-compare",
+    "cards-testimonial",
+    "cards-testimonial",
+    "embed-video",
+    "quote-founder",
+    "columns-rating",
+    "cards-policy"
+  ]
+}

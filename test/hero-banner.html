@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/styles.css"/>
+  <link rel="stylesheet" href="/blocks/hero-banner/hero-banner.css"/>
+  <title>hero-banner preview</title>
+  <style>body { display: block !important; }</style>
+</head>
+<body class="appear">
+  <main>
+    <!-- Replicates the EDS-decorated DOM:
+         section.hero-banner-container > .hero-banner-wrapper > .hero-banner.block
+         row 1 = image cell (picture wrapped in <p>)
+         row 2 = offer link decorated by decorateMain() into .button-container > a.button -->
+    <div class="section hero-banner-container" data-section-status="loaded">
+      <div class="hero-banner-wrapper">
+        <div class="hero-banner block" data-block-name="hero-banner" data-block-status="loaded">
+          <div>
+            <div>
+              <p><picture><img src="https://www.omegaxl.com/media/wysiwyg/hero-slides/2025/price_increase/US_TV_offer_1000IU_hero_banner_desktop_rev_102425.jpg" alt="Made by Nature, Backed By Science. Buy 1 , Get 2 free , now with free shipping. Accepting HSA/FSA. Value of $115.80 , Now only $49.95 with Free shipping."></picture></p>
+            </div>
+          </div>
+          <div>
+            <div>
+              <p class="button-container"><a href="https://www.omegaxl.com/checkout/cart/buynow/id/1894/direct/1" title="TV Offer" class="button">TV Offer</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Second instance: Antinol partner banner (same pattern) -->
+    <div class="section hero-banner-container" data-section-status="loaded">
+      <div class="hero-banner-wrapper">
+        <div class="hero-banner block" data-block-name="hero-banner" data-block-status="loaded">
+          <div>
+            <div>
+              <p><picture><img src="https://www.omegaxl.com/media/wysiwyg/antinol/omegaxl_antinolplus_static_banner_rev_032125_desktop.jpg" alt="Now Introducing Antinol Plus, Premium joint support for your pet. Keep happiness in motion, From the makers of OmegaXL"></picture></p>
+            </div>
+          </div>
+          <div>
+            <div>
+              <p class="button-container"><a href="https://antinolplus.com/" class="button">Learn More</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,187 @@
+/*
+ * cards-testimonial -- customer video testimonial cards
+ * Visual design extracted from omegaxl.com homepage (.omegaxl-testimonials-grid-wrapper).
+ * EDS DOM: block JS converts rows into <ul><li>, with .cards-testimonial-card-image
+ * (video thumbnail link) and .cards-testimonial-card-body (headshot, name, quote, stars).
+ */
+
+/* ---- grid ---- */
+.cards-testimonial > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;        /* mobile: 1-up */
+  gap: 40px;
+  max-width: 1100px;
+  margin-inline: auto;
+}
+
+/* ---- card ---- */
+.cards-testimonial > ul > li {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: hidden;
+}
+
+/* ---- video thumbnail (image is a link to a Vimeo video) ---- */
+.cards-testimonial .cards-testimonial-card-image {
+  position: relative;
+  line-height: 0;
+}
+
+.cards-testimonial .cards-testimonial-card-image a {
+  display: block;
+  position: relative;
+}
+
+.cards-testimonial .cards-testimonial-card-image picture,
+.cards-testimonial .cards-testimonial-card-image img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 245 / 139;   /* exact source ratio (~16/9) */
+  object-fit: cover;
+}
+
+/*
+ * Play-button overlay on the video thumbnail.
+ * NOTE: the source thumbnail JPGs already have a play button + "View Testimonial"
+ * banner baked into the image, so this overlay is hidden by default to avoid a
+ * duplicate. If thumbnails without a baked-in play icon are authored, add the
+ * `needs-play-overlay` class to .cards-testimonial to reveal it.
+ */
+.cards-testimonial.needs-play-overlay .cards-testimonial-card-image a::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: rgb(255 255 255 / 90%);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 25%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.cards-testimonial.needs-play-overlay .cards-testimonial-card-image a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 0;
+  height: 0;
+
+  /* centred play triangle, nudged right to optically centre in the circle */
+  transform: translateX(3px);
+  border-style: solid;
+  border-width: 11px 0 11px 18px;
+  border-color: transparent transparent transparent var(--brand-blue);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* ---- card body ---- */
+.cards-testimonial .cards-testimonial-card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 16px;
+  margin: 0;
+}
+
+/* review headshot (first picture in the body) */
+.cards-testimonial .cards-testimonial-card-body picture,
+.cards-testimonial .cards-testimonial-card-body p:first-child {
+  margin: 0;
+  line-height: 0;
+}
+
+.cards-testimonial .cards-testimonial-card-body picture img {
+  width: 68px;
+  height: 68px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* customer name */
+.cards-testimonial .cards-testimonial-card-body h3 {
+  margin: 12.8px 0;
+  font-family: var(--body-font-family);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #016fbf;        /* source name blue (distinct from brand --brand-blue) */
+  text-align: center;
+}
+
+/* quote -- short review text (already wrapped in literal quotes in content) */
+/* stylelint-disable-next-line no-descending-specificity */
+.cards-testimonial .cards-testimonial-card-body p {
+  margin: 0;
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.5;
+  color: #667085;
+  text-align: center;
+}
+
+/* keep the headshot paragraph free of quote styling */
+/* stylelint-disable-next-line no-descending-specificity */
+.cards-testimonial .cards-testimonial-card-body p:has(picture) {
+  font-size: 0;
+}
+
+/* ---- 5-star rating row ----
+   In the content these are empty <ul><li></li>...</ul> lists; the source
+   rendered each star via CSS. Render each li as a gold star using clip-path. */
+.cards-testimonial .cards-testimonial-card-body ul {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cards-testimonial .cards-testimonial-card-body ul li {
+  width: 28px;
+  height: 28px;
+  margin: 0 4px 0 0;
+  background-color: #ffcb45;   /* source gold */
+  clip-path: polygon(
+    50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%,
+    50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%
+  );
+}
+
+.cards-testimonial .cards-testimonial-card-body ul li:last-child {
+  margin-right: 0;
+}
+
+/* ---- responsive ---- */
+@media (width >= 600px) {
+  .cards-testimonial > ul {
+    grid-template-columns: repeat(2, 1fr);  /* tablet: 2-up */
+  }
+}
+
+@media (width >= 900px) {
+  .cards-testimonial > ul {
+    grid-template-columns: repeat(4, 1fr);  /* desktop: 4-up */
+    gap: 40px;
+  }
+
+  .cards-testimonial .cards-testimonial-card-body ul li {
+    width: 35px;   /* exact source star size */
+    height: 35px;
+    margin-right: 5px;
+  }
+}

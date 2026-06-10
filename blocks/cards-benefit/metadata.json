@@ -1,0 +1,38 @@
+{
+  "variantName": "cards-benefit",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-06-09T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.omegaxl.com/",
+    "originPage": "OmegaXL homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "feature",
+    "imagePattern": "icon"
+  },
+  "contentPattern": {
+    "structure": "icon + heading + paragraph per card; 6-item grid",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "feature/benefit grids",
+      "icon + heading + description item rows",
+      "value-proposition lists"
+    ],
+    "notSuitableFor": [
+      "product cards with prices and CTAs",
+      "media/video testimonial cards"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-09T00:00:00.000Z"
+  }
+}
