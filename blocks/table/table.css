@@ -65,3 +65,119 @@
 .table.block.bordered table td {
   border: 1px solid;
 }
+
+/* ============================================================
+ * compare variant - OmegaXL Difference comparison table
+ * Visual design extracted from https://www.omegaxl.com/
+ * (.omegaxl-difference-content-table-wrapper)
+ * ============================================================ */
+.table.block.compare {
+  --table-compare-blue: #005cb9;
+
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table.block.compare table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  font-family: var(--body-font-family);
+}
+
+.table.block.compare table thead th {
+  background-color: var(--table-compare-blue);
+  color: #fff;
+  padding: 12px 10px;
+  text-align: center;
+  font-weight: 700;
+  font-size: var(--body-font-size-xs, 15px);
+  vertical-align: middle;
+}
+
+.table.block.compare table thead th:first-child {
+  text-align: left;
+}
+
+.table.block.compare table thead th h3 {
+  margin: 0;
+  color: #fff;
+  font-weight: 700;
+  font-size: var(--body-font-size-xs, 15px);
+  line-height: 1.2;
+  text-transform: capitalize;
+}
+
+.table.block.compare table thead th:first-child h3 {
+  font-size: 28px;
+  line-height: 1.3;
+}
+
+.table.block.compare table tbody td {
+  background-color: transparent;
+  color: var(--table-compare-blue);
+  padding: 12px 10px;
+  text-align: left;
+  font-weight: 700;
+  font-size: 14px;
+  vertical-align: middle;
+  border-bottom: 1px solid var(--table-compare-blue);
+}
+
+.table.block.compare table tbody td:not(:first-child) {
+  text-align: center;
+}
+
+.table.block.compare table tbody td:first-child,
+.table.block.compare table thead th:first-child {
+  width: 50%;
+}
+
+.table.block.compare table tbody td:nth-child(2),
+.table.block.compare table thead th:nth-child(2) {
+  width: 22%;
+}
+
+.table.block.compare table tbody td:nth-child(3),
+.table.block.compare table thead th:nth-child(3) {
+  width: 28%;
+}
+
+.table.block.compare table th p,
+.table.block.compare table td p {
+  margin: 0;
+}
+
+.table.block.compare table td picture {
+  display: inline-block;
+  line-height: 0;
+}
+
+.table.block.compare table td img {
+  width: 24px;
+  height: auto;
+  vertical-align: middle;
+}
+
+@media (width >= 900px) {
+  .table.block.compare table thead th,
+  .table.block.compare table tbody td {
+    padding: 15px;
+  }
+
+  .table.block.compare table thead th,
+  .table.block.compare table thead th h3 {
+    font-size: 18px;
+  }
+
+  .table.block.compare table thead th:first-child h3 {
+    font-size: 40px;
+    line-height: 60px;
+  }
+
+  .table.block.compare table tbody td {
+    font-size: 16px;
+  }
+}
