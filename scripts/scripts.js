@@ -83,6 +83,40 @@ function buildAutoBlocks() {
   }
 }
 
+/**
+ * Convert anchors whose href points to an image into <picture><img> elements.
+ * The xwalk richtext pipeline emits external image URLs as bare links
+ * (e.g. <a href="https://host/x.png">https://host/x.png</a>); block decorators
+ * expect an <img>, so normalize them here before blocks are decorated.
+ * @param {Element} main The container element
+ */
+function decorateImageLinks(main) {
+  const imageExt = /\.(png|jpe?g|gif|webp|svg|avif)(\?.*)?$/i;
+  main.querySelectorAll('a[href]').forEach((a) => {
+    const href = a.getAttribute('href') || '';
+    if (!imageExt.test(href)) return;
+    const text = (a.textContent || '').trim();
+    // Only convert "bare URL" links (text equals href or empty); leave real
+    // text links that happen to point at an image alone.
+    if (text && text !== href) return;
+
+    const picture = document.createElement('picture');
+    const img = document.createElement('img');
+    img.setAttribute('src', href);
+    img.setAttribute('loading', 'lazy');
+    img.setAttribute('alt', a.getAttribute('title') || '');
+    picture.append(img);
+
+    const parent = a.parentElement;
+    if (parent && parent.tagName === 'P' && parent.children.length === 1
+      && parent.textContent.trim() === text) {
+      parent.replaceWith(picture);
+    } else {
+      a.replaceWith(picture);
+    }
+  });
+}
+
 function a11yLinks(main) {
   const links = main.querySelectorAll('a');
   links.forEach((link) => {
@@ -101,6 +135,8 @@ function a11yLinks(main) {
  */
 // eslint-disable-next-line import/prefer-default-export
 export function decorateMain(main) {
+  // convert bare image-URL links into <picture> before blocks decorate
+  decorateImageLinks(main);
   // hopefully forward compatible button decoration
   decorateButtons(main);
   decorateIcons(main);
